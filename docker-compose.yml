@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  app:
+    build: .
+    container_name: idempotent-payment-api
+    ports:
+      - "8123:8123"
+    depends_on:
+      - redis
+    environment:
+      - REDIS_ADDR=redis:6379
