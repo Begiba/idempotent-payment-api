@@ -1,0 +1,85 @@
+{
+    "id": null,
+    "uid": "17efeb6f",
+    "title": "Idempotent Payment API Dashboard",
+    "tags": [
+      "go-app",
+      "observability"
+    ],
+    "timezone": "browser",
+    "schemaVersion": 36,
+    "version": 1,
+    "refresh": "10s",
+    "panels": [
+      {
+        "type": "logs",
+        "title": "App Logs (Loki)",
+        "gridPos": {
+          "x": 0,
+          "y": 0,
+          "w": 24,
+          "h": 9
+        },
+        "targets": [
+          {
+            "expr": "{job=\"go-app\"}",
+            "refId": "A",
+            "datasource": {
+              "type": "loki",
+              "uid": "loki"
+            }
+          }
+        ],
+        "options": {
+          "showLabels": true,
+          "dedupStrategy": "none",
+          "wrapLogMessage": true,
+          "enableLogDetails": true
+        }
+      },
+      {
+        "type": "timeseries",
+        "title": "Total Payment Requests",
+        "gridPos": {
+          "x": 0,
+          "y": 9,
+          "w": 12,
+          "h": 8
+        },
+        "targets": [
+          {
+            "expr": "payment_requests_total",
+            "refId": "B",
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            }
+          }
+        ],
+        "lines": true,
+        "fill": 1
+      },
+      {
+        "type": "timeseries",
+        "title": "Failed Payment Requests",
+        "gridPos": {
+          "x": 12,
+          "y": 9,
+          "w": 12,
+          "h": 8
+        },
+        "targets": [
+          {
+            "expr": "payment_requests_failed",
+            "refId": "C",
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            }
+          }
+        ],
+        "lines": true,
+        "fill": 1
+      }
+    ]
+  }
