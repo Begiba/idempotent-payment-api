@@ -38,9 +38,20 @@ var (
 )
 
 func init() {
+	logDir := "./logs"
+	_ = os.MkdirAll(logDir, 0755)
+
 	zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
-	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
+	//log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
+
+	logFile, err := os.OpenFile(logDir+"/app.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err != nil {
+		log.Fatal().Err(err).Msg("Failed to open log file")
+	}
+	log.Logger = zerolog.New(logFile).With().Timestamp().Logger()
+
 	prometheus.MustRegister(requestsTotal, requestsFailed)
+
 }
 
 func initRedis() {

@@ -1,0 +1,164 @@
+{"level":"info","time":1748350681,"message":"Connected to Redis"}
+{"level":"info","time":1748350681,"message":"Starting server on :8123"}
+{"level":"warn","key":"key-3","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748350681,"message":"Retry error"}
+{"level":"warn","key":"key-4","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748350681,"message":"Retry error"}
+{"level":"warn","key":"key-1","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748350681,"message":"Retry error"}
+{"level":"warn","key":"key-2","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748350681,"message":"Retry error"}
+{"level":"warn","key":"key-0","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748350681,"message":"Retry error"}
+{"level":"info","key":"key-3","time":1748350682,"message":"Payment processed"}
+{"level":"error","key":"key-2","time":1748350682,"message":"Simulated internal error"}
+{"level":"error","key":"key-1","time":1748350682,"message":"Simulated internal error"}
+{"level":"warn","key":"key-2","retry":2,"status":"500 Internal Server Error","time":1748350682,"message":"Retry failed"}
+{"level":"warn","key":"key-1","retry":2,"status":"500 Internal Server Error","time":1748350682,"message":"Retry failed"}
+{"level":"info","key":"key-4","time":1748350682,"message":"Payment processed"}
+{"level":"info","key":"key-3","time":1748350682,"message":"Retry succeeded"}
+{"level":"info","key":"key-0","time":1748350682,"message":"Payment processed"}
+{"level":"info","key":"key-4","time":1748350682,"message":"Retry succeeded"}
+{"level":"info","key":"key-0","time":1748350682,"message":"Retry succeeded"}
+{"level":"info","key":"key-2","time":1748350683,"message":"Payment processed"}
+{"level":"info","key":"key-1","time":1748350683,"message":"Payment processed"}
+{"level":"info","key":"key-2","time":1748350683,"message":"Retry succeeded"}
+{"level":"info","key":"key-1","time":1748350683,"message":"Retry succeeded"}
+{"level":"info","time":1748351008,"message":"Connected to Redis"}
+{"level":"info","time":1748351008,"message":"Starting server on :8123"}
+{"level":"warn","key":"key-4","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748351008,"message":"Retry error"}
+{"level":"warn","key":"key-1","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748351008,"message":"Retry error"}
+{"level":"warn","key":"key-0","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748351008,"message":"Retry error"}
+{"level":"warn","key":"key-2","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748351008,"message":"Retry error"}
+{"level":"warn","key":"key-3","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748351008,"message":"Retry error"}
+{"level":"info","key":"key-4","time":1748351009,"message":"Payment processed"}
+{"level":"info","key":"key-4","time":1748351009,"message":"Retry succeeded"}
+{"level":"info","key":"key-1","time":1748351009,"message":"Payment processed"}
+{"level":"info","key":"key-1","time":1748351009,"message":"Retry succeeded"}
+{"level":"info","key":"key-0","time":1748351009,"message":"Payment processed"}
+{"level":"info","key":"key-0","time":1748351009,"message":"Retry succeeded"}
+{"level":"info","key":"key-2","time":1748351009,"message":"Payment processed"}
+{"level":"info","key":"key-2","time":1748351009,"message":"Retry succeeded"}
+{"level":"error","key":"key-3","time":1748351009,"message":"Simulated internal error"}
+{"level":"warn","key":"key-3","retry":2,"status":"500 Internal Server Error","time":1748351009,"message":"Retry failed"}
+{"level":"info","key":"key-3","time":1748351010,"message":"Payment processed"}
+{"level":"info","key":"key-3","time":1748351010,"message":"Retry succeeded"}
+{"level":"info","time":1748351099,"message":"Connected to Redis"}
+{"level":"info","time":1748351099,"message":"Starting server on :8123"}
+{"level":"warn","key":"key-0","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748351099,"message":"Retry error"}
+{"level":"warn","key":"key-1","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748351099,"message":"Retry error"}
+{"level":"warn","key":"key-4","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748351099,"message":"Retry error"}
+{"level":"warn","key":"key-3","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748351099,"message":"Retry error"}
+{"level":"warn","key":"key-2","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748351099,"message":"Retry error"}
+{"level":"info","key":"key-0","time":1748351100,"message":"Payment processed"}
+{"level":"info","key":"key-0","time":1748351100,"message":"Retry succeeded"}
+{"level":"info","key":"key-1","time":1748351100,"message":"Payment processed"}
+{"level":"info","key":"key-1","time":1748351100,"message":"Retry succeeded"}
+{"level":"info","key":"key-4","time":1748351100,"message":"Payment processed"}
+{"level":"info","key":"key-4","time":1748351100,"message":"Retry succeeded"}
+{"level":"info","key":"key-2","time":1748351100,"message":"Payment processed"}
+{"level":"info","key":"key-3","time":1748351100,"message":"Payment processed"}
+{"level":"info","key":"key-2","time":1748351100,"message":"Retry succeeded"}
+{"level":"info","key":"key-3","time":1748351100,"message":"Retry succeeded"}
+{"level":"info","time":1748351794,"message":"Connected to Redis"}
+{"level":"info","time":1748351794,"message":"Starting server on :8123"}
+{"level":"warn","key":"key-3","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748351794,"message":"Retry error"}
+{"level":"warn","key":"key-2","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748351794,"message":"Retry error"}
+{"level":"warn","key":"key-1","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748351794,"message":"Retry error"}
+{"level":"warn","key":"key-4","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748351794,"message":"Retry error"}
+{"level":"warn","key":"key-0","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748351794,"message":"Retry error"}
+{"level":"info","key":"key-3","time":1748351795,"message":"Payment processed"}
+{"level":"info","key":"key-1","time":1748351795,"message":"Payment processed"}
+{"level":"error","key":"key-2","time":1748351795,"message":"Simulated internal error"}
+{"level":"info","key":"key-3","time":1748351795,"message":"Retry succeeded"}
+{"level":"info","key":"key-1","time":1748351795,"message":"Retry succeeded"}
+{"level":"warn","key":"key-2","retry":2,"status":"500 Internal Server Error","time":1748351795,"message":"Retry failed"}
+{"level":"info","key":"key-4","time":1748351795,"message":"Payment processed"}
+{"level":"info","key":"key-4","time":1748351795,"message":"Retry succeeded"}
+{"level":"info","key":"key-0","time":1748351795,"message":"Payment processed"}
+{"level":"info","key":"key-0","time":1748351795,"message":"Retry succeeded"}
+{"level":"info","key":"key-2","time":1748351796,"message":"Payment processed"}
+{"level":"info","key":"key-2","time":1748351796,"message":"Retry succeeded"}
+{"level":"info","time":1748352245,"message":"Connected to Redis"}
+{"level":"info","time":1748352245,"message":"Starting server on :8123"}
+{"level":"warn","key":"key-4","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748352245,"message":"Retry error"}
+{"level":"warn","key":"key-0","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748352245,"message":"Retry error"}
+{"level":"warn","key":"key-3","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748352245,"message":"Retry error"}
+{"level":"warn","key":"key-1","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748352245,"message":"Retry error"}
+{"level":"warn","key":"key-2","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748352245,"message":"Retry error"}
+{"level":"info","key":"key-4","time":1748352246,"message":"Payment processed"}
+{"level":"info","key":"key-4","time":1748352246,"message":"Retry succeeded"}
+{"level":"error","key":"key-0","time":1748352246,"message":"Simulated internal error"}
+{"level":"info","key":"key-3","time":1748352246,"message":"Payment processed"}
+{"level":"warn","key":"key-0","retry":2,"status":"500 Internal Server Error","time":1748352246,"message":"Retry failed"}
+{"level":"error","key":"key-1","time":1748352246,"message":"Simulated internal error"}
+{"level":"info","key":"key-3","time":1748352246,"message":"Retry succeeded"}
+{"level":"warn","key":"key-1","retry":2,"status":"500 Internal Server Error","time":1748352246,"message":"Retry failed"}
+{"level":"error","key":"key-2","time":1748352246,"message":"Simulated internal error"}
+{"level":"warn","key":"key-2","retry":2,"status":"500 Internal Server Error","time":1748352246,"message":"Retry failed"}
+{"level":"info","key":"key-1","time":1748352247,"message":"Payment processed"}
+{"level":"info","key":"key-1","time":1748352247,"message":"Retry succeeded"}
+{"level":"error","key":"key-0","time":1748352247,"message":"Simulated internal error"}
+{"level":"warn","key":"key-0","retry":3,"status":"500 Internal Server Error","time":1748352247,"message":"Retry failed"}
+{"level":"error","key":"key-2","time":1748352247,"message":"Simulated internal error"}
+{"level":"warn","key":"key-2","retry":3,"status":"500 Internal Server Error","time":1748352247,"message":"Retry failed"}
+{"level":"info","key":"key-0","time":1748352249,"message":"Payment processed"}
+{"level":"info","key":"key-0","time":1748352249,"message":"Retry succeeded"}
+{"level":"info","key":"key-2","time":1748352249,"message":"Payment processed"}
+{"level":"info","key":"key-2","time":1748352249,"message":"Retry succeeded"}
+{"level":"info","time":1748353207,"message":"Connected to Redis"}
+{"level":"info","time":1748353207,"message":"Starting server on :8123"}
+{"level":"warn","key":"key-1","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748353207,"message":"Retry error"}
+{"level":"warn","key":"key-0","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748353207,"message":"Retry error"}
+{"level":"warn","key":"key-3","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748353207,"message":"Retry error"}
+{"level":"warn","key":"key-2","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748353207,"message":"Retry error"}
+{"level":"warn","key":"key-4","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748353207,"message":"Retry error"}
+{"level":"info","key":"key-3","time":1748353207,"message":"Payment processed"}
+{"level":"info","key":"key-3","time":1748353207,"message":"Retry succeeded"}
+{"level":"error","key":"key-4","time":1748353207,"message":"Simulated internal error"}
+{"level":"info","key":"key-0","time":1748353207,"message":"Payment processed"}
+{"level":"info","key":"key-2","time":1748353207,"message":"Payment processed"}
+{"level":"info","key":"key-1","time":1748353207,"message":"Payment processed"}
+{"level":"warn","key":"key-4","retry":2,"status":"500 Internal Server Error","time":1748353207,"message":"Retry failed"}
+{"level":"info","key":"key-0","time":1748353207,"message":"Retry succeeded"}
+{"level":"info","key":"key-2","time":1748353207,"message":"Retry succeeded"}
+{"level":"info","key":"key-1","time":1748353207,"message":"Retry succeeded"}
+{"level":"error","key":"key-4","time":1748353208,"message":"Simulated internal error"}
+{"level":"warn","key":"key-4","retry":3,"status":"500 Internal Server Error","time":1748353208,"message":"Retry failed"}
+{"level":"info","key":"key-4","time":1748353210,"message":"Payment processed"}
+{"level":"info","key":"key-4","time":1748353210,"message":"Retry succeeded"}
+{"level":"info","time":1748353316,"message":"Connected to Redis"}
+{"level":"info","time":1748353316,"message":"Starting server on :8123"}
+{"level":"warn","key":"key-0","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748353316,"message":"Retry error"}
+{"level":"warn","key":"key-1","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748353316,"message":"Retry error"}
+{"level":"warn","key":"key-4","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748353316,"message":"Retry error"}
+{"level":"warn","key":"key-3","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748353316,"message":"Retry error"}
+{"level":"warn","key":"key-2","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748353316,"message":"Retry error"}
+{"level":"error","key":"key-0","time":1748353316,"message":"Simulated internal error"}
+{"level":"info","key":"key-1","time":1748353316,"message":"Payment processed"}
+{"level":"info","key":"key-4","time":1748353316,"message":"Payment processed"}
+{"level":"warn","key":"key-0","retry":2,"status":"500 Internal Server Error","time":1748353316,"message":"Retry failed"}
+{"level":"info","key":"key-3","time":1748353316,"message":"Payment processed"}
+{"level":"info","key":"key-2","time":1748353316,"message":"Payment processed"}
+{"level":"info","key":"key-3","time":1748353316,"message":"Retry succeeded"}
+{"level":"info","key":"key-4","time":1748353316,"message":"Retry succeeded"}
+{"level":"info","key":"key-1","time":1748353316,"message":"Retry succeeded"}
+{"level":"info","key":"key-2","time":1748353316,"message":"Retry succeeded"}
+{"level":"info","key":"key-0","time":1748353317,"message":"Payment processed"}
+{"level":"info","key":"key-0","time":1748353317,"message":"Retry succeeded"}
+{"level":"info","time":1748354206,"message":"Connected to Redis"}
+{"level":"info","time":1748354206,"message":"Starting server on :8123"}
+{"level":"warn","key":"key-4","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748354206,"message":"Retry error"}
+{"level":"warn","key":"key-3","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748354206,"message":"Retry error"}
+{"level":"warn","key":"key-2","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748354206,"message":"Retry error"}
+{"level":"warn","key":"key-0","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748354206,"message":"Retry error"}
+{"level":"warn","key":"key-1","retry":1,"error":"Post \"http://localhost:8123/pay\": dial tcp [::1]:8123: connect: connection refused","time":1748354206,"message":"Retry error"}
+{"level":"info","key":"key-3","time":1748354206,"message":"Payment processed"}
+{"level":"info","key":"key-3","time":1748354206,"message":"Retry succeeded"}
+{"level":"info","key":"key-2","time":1748354206,"message":"Payment processed"}
+{"level":"info","key":"key-4","time":1748354206,"message":"Payment processed"}
+{"level":"info","key":"key-0","time":1748354206,"message":"Payment processed"}
+{"level":"info","key":"key-2","time":1748354206,"message":"Retry succeeded"}
+{"level":"info","key":"key-4","time":1748354206,"message":"Retry succeeded"}
+{"level":"info","key":"key-0","time":1748354206,"message":"Retry succeeded"}
+{"level":"error","key":"key-1","time":1748354206,"message":"Simulated internal error"}
+{"level":"warn","key":"key-1","retry":2,"status":"500 Internal Server Error","time":1748354206,"message":"Retry failed"}
+{"level":"error","key":"key-1","time":1748354207,"message":"Simulated internal error"}
+{"level":"warn","key":"key-1","retry":3,"status":"500 Internal Server Error","time":1748354207,"message":"Retry failed"}
+{"level":"info","key":"key-1","time":1748354209,"message":"Payment processed"}
+{"level":"info","key":"key-1","time":1748354209,"message":"Retry succeeded"}
