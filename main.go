@@ -105,7 +105,9 @@ func paymentHandler(w http.ResponseWriter, r *http.Request) {
 	key := "payment:idempotency:" + req.IdempotencyKey
 	exists, err := rdb.Exists(ctx, key).Result()
 	if err == nil && exists == 1 {
-		json.NewEncoder(w).Encode(PaymentResponse{Message: "Payment already processed"})
+		if err := json.NewEncoder(w).Encode(PaymentResponse{Message: "Payment already processed"}); err != nil {
+			log.Error().Err(err).Msg("Failed to encode payment response")
+		}
 		log.Info().Str("key", req.IdempotencyKey).Msg("Duplicate payment request")
 		return
 	}
@@ -118,7 +120,9 @@ func paymentHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	rdb.Set(ctx, key, "processed", 24*time.Hour)
-	json.NewEncoder(w).Encode(PaymentResponse{Message: "Payment processed successfully"})
+	if err := json.NewEncoder(w).Encode(PaymentResponse{Message: "Payment already processed"}); err != nil {
+		log.Error().Err(err).Msg("Failed to encode payment response")
+	}
 	log.Info().Str("key", req.IdempotencyKey).Msg("Payment processed")
 }
 
@@ -160,7 +164,6 @@ func simulateClients() {
 }
 
 func main() {
-	rand.Seed(time.Now().UnixNano())
 	initRedis()
 	go refillTokens()
 	go simulateClients()
@@ -169,5 +172,7 @@ func main() {
 	http.Handle("/metrics", promhttp.Handler())
 
 	log.Info().Msg("Starting server on :8123")
-	http.ListenAndServe(":8123", nil)
+	if err := http.ListenAndServe(":8123", nil); err != nil {
+		log.Fatal().Err(err).Msg("Server failed to start")
+	}
 }
