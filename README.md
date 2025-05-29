@@ -77,7 +77,7 @@ This project demonstrates an idempotent payment API implemented in Go. It handle
 ### Start Services
 
 ```bash
-docker-compose up --build
+docker-compose -f docker-compose.yml up -d
 ```
 
 ---
@@ -101,7 +101,7 @@ Simulate requests using curl or the client simulator.
 --- 
 
 ## 📈 Prometheus Metrics
-Metrics are exposed via /metrics using promhttp:
+Metrics are exposed via `/metrics` using promhttp:
 
 payment_requests_total: Counter for all requests
 
@@ -122,20 +122,26 @@ Ensure Prometheus is scraping this by verifying its job config.
 
 ```
 .
-├── .github/
-├── dashboad/
-├── diagrams/
-├── logs/
-├── monitoring/
+├── .github/                            
+│   ├── workflow
+│       ├── ci.yml                      # CI action file for github
+├── diagrams/                           # images for README.md
+├── logs/                               # logs files created (gp-app.log)
+├── monitoring/                         # monitoring configurations used by docker to setup
+│   ├── dashboards
+│       ├── Go-App-Metrics.json         # Dashboard panel setup 
+│   ├── prometheus.yml
+│   ├── loki-config.yaml
+│   └── promtail-config.yaml
 ├── .dockerignore
 ├── .gitignore
-├── docker-compose.monitoring.yml
-├── docker-compose.yml
+├── docker-compose.monitoring.yml       # Prometheus, Grafana, promtail, Loki setup
+├── docker-compose.yml                  # redis, App setup
 ├── Dockerfile
 ├── go.mod
 ├── go.sum
 ├── LICENSE
-├── main.go
+├── main.go                             # # Go app with payment handler
 └── README.md
 ```
 
@@ -345,11 +351,144 @@ prometheus.MustRegister(requestsTotal, requestsFailed)
 
 ## 🧾 Structured Logging
 
-```go
+```
 log.Info().Str("key", req.IdempotencyKey).Msg("Payment processed")
 ```
 
 - Uses `zerolog` for fast and consistent logging in structured JSON format.
+
+---
+
+### Start Monitoring Services
+
+```
+docker-compose.monitoring up --build
+```
+
+---
+---
+
+## 🧭 Step-by-Step: Open Grafana & View Logs with Loki
+
+### ✅ 1. **Open Grafana in Your Browser**
+
+If you're using Docker Compose (from the `monitoring` setup), Grafana should be available at:
+
+```
+http://localhost:3000
+```
+
+If you're using Docker on Linux and not `localhost`, replace it with your Docker host's IP.
+
+---
+
+### ✅ 2. **Login to Grafana**
+
+Default login credentials:
+
+- **Username:** `admin`
+  
+- **Password:** `admin`
+  
+
+You’ll be asked to change the password after first login.
+
+---
+
+### ✅ 3. Add Data Sources if Not Configured
+
+#### If you haven’t connected Loki yet:
+
+1. On the left sidebar, click ⚙️ **Connections** → **Data Sources**
+  
+2. Click **“Add data source”**
+  
+3. You should see **Loki** in the list (it may already be auto-configured if you're using provisioning)
+  
+4. Click **Loki**
+  
+5. Enter connectionUrl:
+  
+  - **Loki**
+    
+    - URL: `http://loki:3100`
+6. Click **“Save & Test”** after each.
+  
+  - If successful, Loki is now usable!
+
+#### If you haven’t connected Prometheus yet:
+
+1. On the left sidebar, click ⚙️ **Connections** → **Data Sources**
+  
+2. Click **“Add data source”**
+  
+3. You should see **Prometheus** in the list (it may already be auto-configured if you're using provisioning)
+  
+4. Click **Prometheus**
+  
+5. Enter datasource Url:
+  
+  - **Prometheus**
+    
+    - URL: `http://prometheus:9090`
+6. Click **“Save & Test”** after each.
+  
+  - If successful, Loki is now usable!
+ 
+
+---
+
+### ✅ 5. Import a Dashboard in Grafana
+
+#### **Access the Import Dashboard Menu**
+
+- In the **left-hand sidebar**, click the **“+” icon** (Create)
+  
+- Select **“Import dashboard”**
+  
+- Copy paste the JSON or upload the /monitoring/dashboards/Go-App-Metrics.json file
+  
+- Click **"Import"**
+  
+- Upon successful import, **Dashboard** will be displayed or you can visit dashboard by cliking **Dashboard** from **left-hand sidebar**
+  
+
+---
+
+### ✅ 6. **Explore Your Logs**
+
+1. On the left sidebar, click the **compass icon** 🧭 → **Explore**
+  
+2. In the dropdown on top left, choose **Loki** as the data source
+  
+3. In the **query bar**, enter:
+  
+
+```
+{job="go-app"}
+```
+
+This will show all log lines collected from your Go app!
+
+4. You can click on each log line to see structured JSON, e.g.:
+
+```
+{
+    "level": "info",
+    "key": "key-3",
+    "message": "Retry succeeded"
+}
+```
+
+---
+
+# Stop Services
+
+```
+docker-compose -f docker-compose..yml down
+
+docker-compose -f docker-compose.monitoring.yml down
+```
 
 ---
 
