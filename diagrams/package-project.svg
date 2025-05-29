@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="300">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Clients -->
+  <rect x="20" y="30" width="100" height="40" fill="#4CAF50" rx="5" />
+  <text x="40" y="55" fill="white">Client A</text>
+
+  <rect x="20" y="100" width="100" height="40" fill="#4CAF50" rx="5" />
+  <text x="40" y="125" fill="white">Client B</text>
+
+  <rect x="20" y="170" width="100" height="40" fill="#4CAF50" rx="5" />
+  <text x="40" y="195" fill="white">Client C</text>
+
+  <!-- Redis -->
+  <rect x="250" y="80" width="100" height="100" fill="#FF5722" rx="10" />
+  <text x="275" y="135" fill="white">Redis</text>
+
+  <!-- Payment API -->
+  <rect x="450" y="100" width="150" height="60" fill="#2196F3" rx="5" />
+  <text x="470" y="135" fill="white">Payment API</text>
+
+  <!-- Arrows -->
+  <line x1="120" y1="50" x2="250" y2="110" stroke="black" marker-end="url(#arrow)" />
+  <line x1="120" y1="120" x2="250" y2="120" stroke="black" marker-end="url(#arrow)" />
+  <line x1="120" y1="190" x2="250" y2="130" stroke="black" marker-end="url(#arrow)" />
+
+  <line x1="350" y1="130" x2="450" y2="130" stroke="black" marker-end="url(#arrow)" />
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="240">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Retry attempts with increasing delay -->
+  <text x="20" y="30" fill="black">Retry Attempts Over Time</text>
+
+  <line x1="50" y1="60" x2="100" y2="60" stroke="black" marker-end="url(#arrow)" />
+  <circle cx="100" cy="60" r="10" fill="#4CAF50" />
+  <text x="115" y="65">1st Attempt (0s)</text>
+
+  <line x1="130" y1="90" x2="200" y2="90" stroke="black" marker-end="url(#arrow)" />
+  <circle cx="200" cy="90" r="10" fill="#FF9800" />
+  <text x="215" y="95">2nd Attempt (2s)</text>
+
+  <line x1="230" y1="120" x2="340" y2="120" stroke="black" marker-end="url(#arrow)" />
+  <circle cx="340" cy="120" r="10" fill="#FF5722" />
+  <text x="355" y="125">3rd Attempt (4s)</text>
+
+  <line x1="370" y1="150" x2="520" y2="150" stroke="black" marker-end="url(#arrow)" />
+  <circle cx="520" cy="150" r="10" fill="#F44336" />
+  <text x="535" y="155">4th Attempt (8s)</text>
+</svg>

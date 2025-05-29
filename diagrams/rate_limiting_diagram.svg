@@ -1,0 +1,108 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  
+  <!-- User Request -->
+  <rect x="50" y="100" width="100" height="60" rx="8" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+  <text x="100" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+    User
+  </text>
+  <text x="100" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    Request
+  </text>
+  
+  <!-- Arrow to Token Bucket -->
+  <path d="M 150 130 L 240 130" stroke="#374151" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Token Bucket -->
+  <g>
+    <!-- Bucket shape -->
+    <path d="M 240 80 Q 240 70 250 70 L 350 70 Q 360 70 360 80 L 370 180 Q 370 190 360 190 L 250 190 Q 240 190 240 180 Z" 
+          fill="#10b981" stroke="#059669" stroke-width="2"/>
+    
+    <!-- Bucket label -->
+    <text x="305" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+      Token Bucket
+    </text>
+    
+    <!-- Tokens inside bucket -->
+    <circle cx="260" cy="120" r="8" fill="#fbbf24" stroke="#f59e0b"/>
+    <circle cx="285" cy="120" r="8" fill="#fbbf24" stroke="#f59e0b"/>
+    <circle cx="310" cy="120" r="8" fill="#fbbf24" stroke="#f59e0b"/>
+    <circle cx="335" cy="120" r="8" fill="#fbbf24" stroke="#f59e0b"/>
+    <circle cx="350" cy="120" r="8" fill="#fbbf24" stroke="#f59e0b"/>
+    
+    <circle cx="272" cy="145" r="8" fill="#fbbf24" stroke="#f59e0b"/>
+    <circle cx="297" cy="145" r="8" fill="#fbbf24" stroke="#f59e0b"/>
+    <circle cx="322" cy="145" r="8" fill="#fbbf24" stroke="#f59e0b"/>
+    
+    <circle cx="285" cy="170" r="8" fill="#fbbf24" stroke="#f59e0b"/>
+    <circle cx="310" cy="170" r="8" fill="#fbbf24" stroke="#f59e0b"/>
+    
+    <!-- Token count -->
+    <text x="305" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#374151">
+      Available Tokens
+    </text>
+  </g>
+  
+  <!-- Decision Diamond -->
+  <path d="M 450 110 L 490 130 L 450 150 L 410 130 Z" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+  
+  <text x="450" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">
+    Has
+  </text>
+  <text x="450" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">
+    Token?
+  </text>
+  
+  <!-- Arrow to decision -->
+  <path d="M 365 130 L 410 130" stroke="#374151" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- YES Path - Proceed -->
+  <rect x="550" y="60" width="100" height="60" rx="8" fill="#10b981" stroke="#059669" stroke-width="2"/>
+  <text x="600" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+    ✓ Proceed
+  </text>
+  <text x="600" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    Request processed
+  </text>
+  <text x="600" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    Token consumed
+  </text>
+  
+  <!-- YES arrow -->
+  <path d="M 470 118 L 550 90" stroke="#374151" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="515" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#059669" font-weight="bold">
+    YES
+  </text>
+  
+  <!-- NO Path - 429 Error -->
+  <rect x="550" y="160" width="150" height="60" rx="8" fill="#dc2626" stroke="#b91c1c" stroke-width="2"/>
+  <text x="625" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">
+    ✗ 429 Error
+  </text>
+  <text x="625" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    Too Many Requests
+  </text>
+  <text x="625" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    Rate limit exceeded
+  </text>
+  
+  <!-- NO arrow -->
+  <path d="M 470 141 L 550 180" stroke="#374151" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="515" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#dc2626" font-weight="bold">
+    NO
+  </text>
+  
+  <!-- Token Refill Arrow -->
+  <path d="M 305 35 L 305 70" stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#arrowhead)" stroke-dasharray="3,3"/>
+  <text x="305" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6b7280">
+    Tokens refilled periodically
+  </text>
+ 
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+</svg>

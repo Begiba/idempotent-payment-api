@@ -26,11 +26,15 @@ services:
     command: -config.file=/etc/loki/loki-config.yaml
     volumes:
       - ./monitoring/loki-config.yaml:/etc/loki/loki-config.yaml
+      - ./monitoring/loki-wal:/wal     # 👈 Add this line
+      - ./monitoring/loki-storage/chunks:/loki/chunks
+      - ./monitoring/loki-storage/index:/loki/index
+      - ./monitoring/loki-storage/boltdb-cache:/loki/boltdb-cache
 
   promtail:
     image: grafana/promtail:2.9.4
     volumes:
-      - /var/log:/var/log
+      - ./logs:/var/log/myapp
       - ./monitoring/promtail-config.yaml:/etc/promtail/promtail.yaml
     command: -config.file=/etc/promtail/promtail.yaml
     depends_on:
