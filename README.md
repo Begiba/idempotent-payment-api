@@ -143,11 +143,11 @@ Ensure Prometheus is scraping this by verifying its job config.
 
 ## 💡 Notes
 
-- Use `http://localhost:8080/pay` to trigger test payments.
+- Use `http://localhost:8123/pay` to trigger test payments.
 
 - Use `simulateClients()` in Go to generate load automatically.
 
-- Metrics are accessible at: `http://localhost:8080/metrics`.
+- Metrics are accessible at: `http://localhost:8123/metrics`.
 
 ---
 
@@ -155,7 +155,7 @@ Ensure Prometheus is scraping this by verifying its job config.
 
 ```
 
-curl -X POST http://localhost:8080/pay \   
+curl -X POST http://localhost:8123/pay \   
 -H "Content-Type: application/json" \   
 -d '{     
         "user_id": "user123",     
@@ -286,7 +286,7 @@ rateLimiterMu.Unlock()
 func simulateClients() {
     for i := 0; i < 5; i++ {
         go func(i int) {
-            retryWithExponentialBackoff("http://localhost:8080/pay", request)
+            retryWithExponentialBackoff("http://localhost:8123/pay", request)
         }(i)
     }
 }
