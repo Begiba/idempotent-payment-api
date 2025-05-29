@@ -485,7 +485,7 @@ This will show all log lines collected from your Go app!
 # Stop Services
 
 ```
-docker-compose -f docker-compose..yml down
+docker-compose -f docker-compose.yml down
 
 docker-compose -f docker-compose.monitoring.yml down
 ```
